@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body style="font-family: 'Times New Roman', Times, serif;">
+    <h1 style="margin:0; padding: 5px; border-radius:6px; border: 1px solid rgb(238,238,238)"><u>_Multiplication Table_</u></h1>
+    <div style="background: linear-gradient(to bottom, coral, chocolate); display: flex; flex-direction: column; margin:5px; padding: 5px; border-radius: 6px; overflow: clip;">
+        <label>
+            <b>Show from Row
+                <input type="number" name="row-start" id="" max="10" min="1" value="1" style="padding: 5px; border-radius: 6px;"/> 
+            and Column 
+                <input type="number" name="col-start" id="" max="10" min="1" value="1" style="padding: 5px; border-radius: 6px;"/> 
+            </b>
+            <button type="submit" style="margin-left:5px; padding: 5px;"><b>Apply</b></button>
+        </label>
+    </div>
+    <div style="display: flex; flex-direction: column; margin:5px; padding: 0px; border:1px solid gray; border-radius: 6px; overflow: clip;">
+        <table border="1px" style="border-collapse: collapse; border-radius: 6px; overflow: clip;">
+            <caption style="padding: 5px;"><b>Multiplication Index</b></caption>
+            <thead style="margin:5px; width:100%; padding:5px; text-align: center;">
+                <tr style="margin:5px; border: 1px; width:100%; padding:5px;">
+                    <style>
+                        table caption{
+                            background: linear-gradient(to bottom, coral, chocolate);
+                            text-shadow:0 0 3px #9e9e9e;
+                        }
+                        thead th:not(:nth-of-type(1)){
+                            background-color: chocolate;
+                        }
+                        thead th:nth-of-type(1){
+                            background: linear-gradient(to bottom left, chocolate, coral);
+                        }
+                    </style>
+                    <th>#<b>*</b></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                </tr>
+            </thead>
+            <tbody style="margin:5px; width:100%; padding:5px; text-align: center;">
+                <style>
+                    tbody tr td:nth-of-type(1){
+                        background-color:coral;
+                    }
+                </style>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+                <tr style="margin:5px; border:1px; width:100%; padding:5px;">
+                    <td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+</body>
+<script>
+    var inputs = document.querySelectorAll("input, button");
+    function refresh() {
+        const rowStart = inputs[0].value;
+        const colStart = inputs[1].value;
+        const thb = document.querySelector("th>b");
+        thb.textContent = `${rowStart}:${colStart}`;
+        let colHs = document.querySelectorAll("th:not(:nth-of-type(1))");
+        let rowHs = document.querySelectorAll("tbody tr td:nth-of-type(1)");
+        let rows = document.querySelectorAll("tbody tr");
+        let rsv = rowStart;
+        let csv = colStart;
+        for(let x = 0; x < 10; x++){
+            rowHs[x].textContent = rsv;
+            colHs[x].textContent = csv;
+            let rowDs = rows[x].children;
+            let cx = colStart;
+            for(let c = 1; c <= 10; c++){
+                rowDs[c].textContent = (rsv*cx);
+                cx++;
+            } // end for-loop
+            rsv++;
+            csv++;
+        } // end for-loop
+    } // end fx
+    inputs.forEach((item)=>{
+        if(item.nodeName=="INPUT"){
+            item.onchange = function(evt){
+                refresh();
+            } // end fx
+        } else {
+            item.onclick = function(evt){
+                refresh();
+            } // end fx
+        } // end if
+    });
+    window.onload = function(evt){
+        let tableBody = document.querySelector('table').tBodies[0];
+        for(let x = 0; x < tableBody.rows.length; x++){
+            let row = tableBody.rows[x];
+            row.cells[x+1].style.backgroundColor = 'rgb(228, 228, 228)';
+        } // end for-loop
+        refresh();
+    };
+</script>
+</html>
